@@ -8,11 +8,15 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 let coordinates42 = CLLocationCoordinate2D(
   latitude: 48.8965575773125,
   longitude: 2.31843883360993
 )
+let initialLocation = CLLocation(latitude: coordinates42.latitude, longitude: coordinates42.longitude)
+
+let initialMapType: MKMapType = .Satellite
 
 class Pin: NSObject, MKAnnotation {
   var coordinate: CLLocationCoordinate2D
@@ -28,20 +32,39 @@ class Pin: NSObject, MKAnnotation {
   }
 }
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
+
+  let mapTypes: [MKMapType] = [.Standard, .Satellite, .Hybrid]
+
+  @IBAction func onSegmentedControlChanged(sender: UISegmentedControl) {
+    mapView.mapType = mapTypes[sender.selectedSegmentIndex]
+  }
+
   let regionRadius: CLLocationDistance = 200
 
-
+  let locationManager = CLLocationManager()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
-    let initialLocation = CLLocation(latitude: coordinates42.latitude, longitude: coordinates42.longitude)
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.requestAlwaysAuthorization()
+    locationManager.startUpdatingLocation()
+    locationManager.requestWhenInUseAuthorization()
 
+    mapView.showsUserLocation = true
+
+    mapView.mapType = initialMapType
+    segmentedControl.selectedSegmentIndex = Int(initialMapType.rawValue)
+
+    // Initialise map position
     centerMapOnLocation(initialLocation)
+
+    // Add 42 Pin
     let pin42 = Pin(title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)
     mapView.addAnnotation(pin42)
 
@@ -61,6 +84,24 @@ class MapViewController: UIViewController {
     annotation.coordinate = touchMapCoordinate
 
     mapView.addAnnotation(annotation)
+  }
+
+  @IBAction func onCurrentLocationPressed(sender: UIButton) {
+    if let currentLocation = locationManager.location {
+      centerMapOnLocation(currentLocation)
+    }
+  }
+
+//  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//    if let location = locations.last {
+//      centerMapOnLocation(location)
+//    }
+//
+//    manager.stopUpdatingLocation()
+//  }
+
+  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    print("locationManager Error: " + error.localizedDescription)
   }
 
   func centerMapOnLocation(location: CLLocation) {
