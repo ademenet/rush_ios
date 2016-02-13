@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54201091C6F7B890006171D /* PoneyCell.swift */; };
 		B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */; };
-		B55CA0EC1C6F3A7800F976DB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0EB1C6F3A7800F976DB /* MapViewController.swift */; };
 		B55CA0EE1C6F3A7800F976DB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */; };
 		B55CA0F11C6F3A7800F976DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0EF1C6F3A7800F976DB /* Main.storyboard */; };
 		B55CA0F31C6F3A7800F976DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F21C6F3A7800F976DB /* Assets.xcassets */; };
 		B55CA0F61C6F3A7800F976DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F41C6F3A7800F976DB /* LaunchScreen.storyboard */; };
 		B566B85A1C6F6E9C008C80E4 /* PoneyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */; };
 		B5E2750A1C6F835000E1DEB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E275091C6F835000E1DEB0 /* MapKit.framework */; };
+		B5EF38461C6F855E00A6CEB6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		B54201091C6F7B890006171D /* PoneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyCell.swift; sourceTree = "<group>"; };
 		B55CA0E61C6F3A7700F976DB /* poney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B55CA0EB1C6F3A7800F976DB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B55CA0F01C6F3A7800F976DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B55CA0F21C6F3A7800F976DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		B55CA1071C6F3A7800F976DB /* poneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyListViewController.swift; sourceTree = "<group>"; };
 		B5E275091C6F835000E1DEB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */,
-				B55CA0EB1C6F3A7800F976DB /* MapViewController.swift */,
 				B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */,
 				B55CA0EF1C6F3A7800F976DB /* Main.storyboard */,
 				B55CA0F21C6F3A7800F976DB /* Assets.xcassets */,
@@ -108,6 +107,7 @@
 				B55CA0F71C6F3A7800F976DB /* Info.plist */,
 				B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */,
 				B54201091C6F7B890006171D /* PoneyCell.swift */,
+				B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */,
 			);
 			path = poney;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				B55CA0EE1C6F3A7800F976DB /* SecondViewController.swift in Sources */,
 				B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */,
 				B566B85A1C6F6E9C008C80E4 /* PoneyListViewController.swift in Sources */,
-				B55CA0EC1C6F3A7800F976DB /* MapViewController.swift in Sources */,
+				B5EF38461C6F855E00A6CEB6 /* MapViewController.swift in Sources */,
 				B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
