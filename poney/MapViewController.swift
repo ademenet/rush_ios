@@ -75,26 +75,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let tabBarController = self.tabBarController as! PoneyTabBarController
     let poneyShops = tabBarController.poneyShops
     for shop in poneyShops {
-//      
+      let pin = Pin(title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)
+      mapView.addAnnotation(pin)
     }
 
-    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
-
-    longPressRecogniser.minimumPressDuration = 1.0
-    mapView.addGestureRecognizer(longPressRecogniser)
+//    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+//
+//    longPressRecogniser.minimumPressDuration = 1.0
+//    mapView.addGestureRecognizer(longPressRecogniser)
   }
 
-  func handleLongPress(getstureRecognizer : UIGestureRecognizer) {
-    if getstureRecognizer.state != .Began { return }
-
-    let touchPoint = getstureRecognizer.locationInView(self.mapView)
-    let touchMapCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
-    print(touchMapCoordinate)
-    let annotation = MKPointAnnotation()
-    annotation.coordinate = touchMapCoordinate
-
-    mapView.addAnnotation(annotation)
-  }
+//  func handleLongPress(getstureRecognizer : UIGestureRecognizer) {
+//    if getstureRecognizer.state != .Began { return }
+//
+//    let touchPoint = getstureRecognizer.locationInView(self.mapView)
+//    let touchMapCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
+//    print(touchMapCoordinate)
+//    let annotation = MKPointAnnotation()
+//    annotation.coordinate = touchMapCoordinate
+//
+//    mapView.addAnnotation(annotation)
+//  }
 
   @IBAction func onCurrentLocationPressed(sender: UIButton) {
     if let currentLocation = locationManager.location {

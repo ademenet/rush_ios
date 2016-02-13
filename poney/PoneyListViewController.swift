@@ -47,7 +47,7 @@ class PoneyListViewController: UITableViewController {
     let mapViewController = self.tabBarController?.viewControllers![mapViewControllerIndex] as! MapViewController
 
     // prepare initialLocation for map view
-    let location = poneyShops[indexPath.row].location
+    let location: CLLocation = poneyShops[indexPath.row].location
     mapViewController.centerMapOnLocation(location)
 
     // switch to MapView tab
