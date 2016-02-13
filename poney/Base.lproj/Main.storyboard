@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-qR-ltf">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-qR-ltf">
                                 <rect key="frame" x="0.0" y="20" width="320" height="458"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jnu-ka-WOU">
@@ -61,6 +61,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="Location" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="hkq-gr-ok5"/>
                     <connections>
                         <outlet property="mapView" destination="1WI-qR-ltf" id="BzO-ld-Qre"/>
                         <outlet property="segmentedControl" destination="Jnu-ka-WOU" id="B7M-g4-Mmf"/>
@@ -79,11 +80,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PoneyCellIdentifier" rowHeight="73" id="DhB-lG-1Rh" customClass="PoneyCell" customModule="poney" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PoneyCellIdentifier" rowHeight="73" id="DhB-lG-1Rh" customClass="PoneyCell" customModule="poney" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DhB-lG-1Rh" id="q5S-NH-YBu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BN-KB-61Y">
@@ -109,6 +110,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="4BN-KB-61Y" id="IIJ-ZB-z9L"/>
                                     <outlet property="nameLabel" destination="dbc-uo-8Yo" id="SgU-Gc-Yot"/>
+                                    <segue destination="9pv-A4-QxB" kind="push" identifier="ShowMap" id="PlM-dv-gkh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -187,4 +189,7 @@
         <image name="Layers" width="27" height="22"/>
         <image name="Location" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PlM-dv-gkh"/>
+    </inferredMetricsTieBreakers>
 </document>

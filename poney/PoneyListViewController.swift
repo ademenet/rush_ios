@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
 struct Poney {
   var name: String
   var description: String
+  var coordinate: CLLocationCoordinate2D
 
-  init(name: String, description: String) {
+  init(name: String, description: String, coordinate: CLLocationCoordinate2D) {
     self.name = name
     self.description = description
+    self.coordinate = coordinate
   }
 }
 
@@ -26,8 +29,8 @@ class PoneyListViewController: UITableViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    let poney1 = Poney(name: "bob", description: "joly")
-    let poney2 = Poney(name: "alain", description: "moche")
+    let poney1 = Poney(name: "bob", description: "joly", coordinate: CLLocationCoordinate2D(latitude: 48.8965, longitude: 2.318))
+    let poney2 = Poney(name: "alain", description: "moche", coordinate: CLLocationCoordinate2D(latitude: 49.89661, longitude: 2.31))
     poneys += [poney1, poney2]
   }
 
@@ -49,4 +52,13 @@ class PoneyListViewController: UITableViewController {
     return cell
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowMap" {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        let destinationVC = segue.destinationViewController as! MapViewController
+        let c = poneys[indexPath.row].coordinate
+        destinationVC.initialLocation = CLLocation(latitude: c.latitude, longitude: c.longitude)
+      }
+    }
+  }
 }

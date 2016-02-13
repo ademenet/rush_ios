@@ -14,9 +14,6 @@ let coordinates42 = CLLocationCoordinate2D(
   latitude: 48.8965575773125,
   longitude: 2.31843883360993
 )
-let initialLocation = CLLocation(latitude: coordinates42.latitude, longitude: coordinates42.longitude)
-
-let initialMapType: MKMapType = .Satellite
 
 class Pin: NSObject, MKAnnotation {
   var coordinate: CLLocationCoordinate2D
@@ -36,6 +33,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
+
+  var initialLocation = CLLocation(latitude: coordinates42.latitude, longitude: coordinates42.longitude)
+  let initialMapType: MKMapType = .Satellite
 
   let mapTypes: [MKMapType] = [.Standard, .Satellite, .Hybrid]
 
