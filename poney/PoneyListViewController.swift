@@ -9,29 +9,18 @@
 import UIKit
 import MapKit
 
-struct Poney {
-  var name: String
-  var description: String
-  var coordinate: CLLocationCoordinate2D
-
-  init(name: String, description: String, coordinate: CLLocationCoordinate2D) {
-    self.name = name
-    self.description = description
-    self.coordinate = coordinate
-  }
-}
+let mapViewControllerIndex = 0
 
 class PoneyListViewController: UITableViewController {
 
-  var poneys = [Poney]()
+  var poneyShops = [PoneyShop]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
-    let poney1 = Poney(name: "bob", description: "joly", coordinate: CLLocationCoordinate2D(latitude: 48.8965, longitude: 2.318))
-    let poney2 = Poney(name: "alain", description: "moche", coordinate: CLLocationCoordinate2D(latitude: 49.89661, longitude: 2.31))
-    poneys += [poney1, poney2]
+    // init poneyShops from tab bar data
+    let tabBarController = self.tabBarController as! PoneyTabBarController
+    poneyShops = tabBarController.poneyShops
   }
 
   // Table View Protocol
@@ -41,24 +30,28 @@ class PoneyListViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return poneys.count
+    return poneyShops.count
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cellIdentifier = "PoneyCellIdentifier"
     let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! PoneyCell
-    cell.nameLabel.text = poneys[indexPath.row].name
-    cell.descriptionLabel.text = poneys[indexPath.row].description
+    cell.nameLabel.text = poneyShops[indexPath.row].name
+    cell.descriptionLabel.text = poneyShops[indexPath.row].description
     return cell
   }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "ShowMap" {
-      if let indexPath = self.tableView.indexPathForSelectedRow {
-        let destinationVC = segue.destinationViewController as! MapViewController
-        let c = poneys[indexPath.row].coordinate
-        destinationVC.initialLocation = CLLocation(latitude: c.latitude, longitude: c.longitude)
-      }
-    }
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+    let mapViewController = self.tabBarController?.viewControllers![mapViewControllerIndex] as! MapViewController
+
+    // prepare initialLocation for map view
+    let location = poneyShops[indexPath.row].location
+    mapViewController.centerMapOnLocation(location)
+
+    // switch to MapView tab
+    self.tabBarController?.selectedIndex = mapViewControllerIndex
   }
+
 }

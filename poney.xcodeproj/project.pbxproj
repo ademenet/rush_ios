@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9131B4D91C6FACB000E8BB3C /* PoneyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */; };
+		91E8E69C1C6FB783007D065A /* PoneyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */; };
 		B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54201091C6F7B890006171D /* PoneyCell.swift */; };
 		B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */; };
-		B55CA0EE1C6F3A7800F976DB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */; };
 		B55CA0F11C6F3A7800F976DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0EF1C6F3A7800F976DB /* Main.storyboard */; };
 		B55CA0F31C6F3A7800F976DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F21C6F3A7800F976DB /* Assets.xcassets */; };
 		B55CA0F61C6F3A7800F976DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F41C6F3A7800F976DB /* LaunchScreen.storyboard */; };
@@ -36,10 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyDataModel.swift; sourceTree = "<group>"; };
+		91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyTabBarController.swift; sourceTree = "<group>"; };
 		B54201091C6F7B890006171D /* PoneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyCell.swift; sourceTree = "<group>"; };
 		B55CA0E61C6F3A7700F976DB /* poney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B55CA0F01C6F3A7800F976DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B55CA0F21C6F3A7800F976DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B55CA0F51C6F3A7800F976DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */,
-				B55CA0ED1C6F3A7800F976DB /* SecondViewController.swift */,
 				B55CA0EF1C6F3A7800F976DB /* Main.storyboard */,
 				B55CA0F21C6F3A7800F976DB /* Assets.xcassets */,
 				B55CA0F41C6F3A7800F976DB /* LaunchScreen.storyboard */,
@@ -108,6 +109,8 @@
 				B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */,
 				B54201091C6F7B890006171D /* PoneyCell.swift */,
 				B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */,
+				9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */,
+				91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */,
 			);
 			path = poney;
 			sourceTree = "<group>";
@@ -248,9 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55CA0EE1C6F3A7800F976DB /* SecondViewController.swift in Sources */,
 				B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */,
+				91E8E69C1C6FB783007D065A /* PoneyTabBarController.swift in Sources */,
 				B566B85A1C6F6E9C008C80E4 /* PoneyListViewController.swift in Sources */,
+				9131B4D91C6FACB000E8BB3C /* PoneyDataModel.swift in Sources */,
 				B5EF38461C6F855E00A6CEB6 /* MapViewController.swift in Sources */,
 				B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */,
 			);

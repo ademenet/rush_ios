@@ -39,6 +39,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
   let mapTypes: [MKMapType] = [.Standard, .Satellite, .Hybrid]
 
+  let pins: [Pin] = [Pin]()
+
   @IBAction func onSegmentedControlChanged(sender: UISegmentedControl) {
     mapView.mapType = mapTypes[sender.selectedSegmentIndex]
   }
@@ -50,11 +52,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    locationManager.requestWhenInUseAuthorization()
+
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingLocation()
-    locationManager.requestWhenInUseAuthorization()
 
     mapView.showsUserLocation = true
 
@@ -68,13 +71,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     let pin42 = Pin(title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)
     mapView.addAnnotation(pin42)
 
+    // Init poney shops annotations
+    let tabBarController = self.tabBarController as! PoneyTabBarController
+    let poneyShops = tabBarController.poneyShops
+    for shop in poneyShops {
+//      
+    }
+
     let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
 
     longPressRecogniser.minimumPressDuration = 1.0
     mapView.addGestureRecognizer(longPressRecogniser)
   }
 
-  func handleLongPress(getstureRecognizer : UIGestureRecognizer){
+  func handleLongPress(getstureRecognizer : UIGestureRecognizer) {
     if getstureRecognizer.state != .Began { return }
 
     let touchPoint = getstureRecognizer.locationInView(self.mapView)
@@ -90,18 +100,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     if let currentLocation = locationManager.location {
       centerMapOnLocation(currentLocation)
     }
-  }
-
-//  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//    if let location = locations.last {
-//      centerMapOnLocation(location)
-//    }
-//
-//    manager.stopUpdatingLocation()
-//  }
-
-  func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    print("locationManager Error: " + error.localizedDescription)
   }
 
   func centerMapOnLocation(location: CLLocation) {
