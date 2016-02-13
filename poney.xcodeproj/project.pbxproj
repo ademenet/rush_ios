@@ -13,8 +13,6 @@
 		B55CA0F11C6F3A7800F976DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0EF1C6F3A7800F976DB /* Main.storyboard */; };
 		B55CA0F31C6F3A7800F976DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F21C6F3A7800F976DB /* Assets.xcassets */; };
 		B55CA0F61C6F3A7800F976DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55CA0F41C6F3A7800F976DB /* LaunchScreen.storyboard */; };
-		B55CA1011C6F3A7800F976DB /* poneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA1001C6F3A7800F976DB /* poneyTests.swift */; };
-		B55CA10C1C6F3A7800F976DB /* poneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA10B1C6F3A7800F976DB /* poneyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +42,7 @@
 		B55CA0F51C6F3A7800F976DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55CA0F71C6F3A7800F976DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55CA0FC1C6F3A7800F976DB /* poneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55CA1001C6F3A7800F976DB /* poneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = poneyTests.swift; sourceTree = "<group>"; };
-		B55CA1021C6F3A7800F976DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55CA1071C6F3A7800F976DB /* poneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B55CA10B1C6F3A7800F976DB /* poneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = poneyUITests.swift; sourceTree = "<group>"; };
-		B55CA10D1C6F3A7800F976DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				B55CA0E81C6F3A7700F976DB /* poney */,
-				B55CA0FF1C6F3A7800F976DB /* poneyTests */,
-				B55CA10A1C6F3A7800F976DB /* poneyUITests */,
 				B55CA0E71C6F3A7700F976DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,24 +100,6 @@
 				B55CA0F71C6F3A7800F976DB /* Info.plist */,
 			);
 			path = poney;
-			sourceTree = "<group>";
-		};
-		B55CA0FF1C6F3A7800F976DB /* poneyTests */ = {
-			isa = PBXGroup;
-			children = (
-				B55CA1001C6F3A7800F976DB /* poneyTests.swift */,
-				B55CA1021C6F3A7800F976DB /* Info.plist */,
-			);
-			path = poneyTests;
-			sourceTree = "<group>";
-		};
-		B55CA10A1C6F3A7800F976DB /* poneyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B55CA10B1C6F3A7800F976DB /* poneyUITests.swift */,
-				B55CA10D1C6F3A7800F976DB /* Info.plist */,
-			);
-			path = poneyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55CA1011C6F3A7800F976DB /* poneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B55CA10C1C6F3A7800F976DB /* poneyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
