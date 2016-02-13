@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -12,16 +13,47 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleAspectFit" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-poney" translatesAutoresizingMaskIntoConstraints="NO" id="SBM-Dc-zTH">
+                                <rect key="frame" x="35" y="131" width="250" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="2Na-KY-t9u"/>
+                                    <constraint firstAttribute="height" constant="305" id="Y88-GI-giG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poney Map" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2E-dh-egm">
+                                <rect key="frame" x="109" y="444" width="102" height="23"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh yeah ! Trouvez votre poney en un coup d'oeil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUm-E2-xNX">
+                                <rect key="frame" x="34" y="470" width="253" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="d2E-dh-egm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ig0-XK-7ma"/>
+                            <constraint firstItem="nUm-E2-xNX" firstAttribute="top" secondItem="d2E-dh-egm" secondAttribute="bottom" constant="3" id="U9f-hC-85m"/>
+                            <constraint firstItem="nUm-E2-xNX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="abQ-cW-Bab"/>
+                            <constraint firstItem="d2E-dh-egm" firstAttribute="top" secondItem="SBM-Dc-zTH" secondAttribute="bottom" constant="8" id="gcf-yL-i3C"/>
+                            <constraint firstItem="SBM-Dc-zTH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iMQ-Zd-qTz"/>
+                            <constraint firstItem="SBM-Dc-zTH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="puL-iF-5c7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="78" y="409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-poney" width="500" height="610"/>
+    </resources>
 </document>
