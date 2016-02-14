@@ -13,12 +13,12 @@ class PoneyTabBarController: UITabBarController {
 
   // Holds all the data
   var poneyShops: [PoneyShop] = [
-    PoneyShop(name: "Poneysher", description: "Hardcore & Gothic poneys", type: .Shop, location: CLLocation(latitude: 48.8965, longitude: 2.318)),
+    PoneyShop(name: "Poneysher", description: "Hardcore & Gothic poneys", type: .Shop, location: CLLocation(latitude: 48.8965, longitude: 2.338)),
     PoneyShop(name: "Po Po Adventure", description: "Come play with sweet poneys!", type: .Park, location: CLLocation(latitude: 49.89671, longitude: 2.81)),
     PoneyShop(name: "Rainbow Poney Club", description: "Come, it's so fun", type: .NightClub, location: CLLocation(latitude: 48.8890, longitude: 2.3160)),
     PoneyShop(name: "Hell of a Poney", description: "Dare to touch?", type: .NightClub, location: CLLocation(latitude: 48.8833, longitude: 2.2988)),
     PoneyShop(name: "Unicorn strip bar", description: "Come baby", type: .Bar, location: CLLocation(latitude: 48.8935, longitude: 2.3301)),
-    PoneyShop(name: "Ooops you touch my tralala", description: "Sweet Jesus!", type: .Coffee, location: CLLocation(latitude: 48.8952, longitude: 2.3184)),
+    PoneyShop(name: "Ooops you touch my tralala", description: "Sweet Jesus!", type: .Coffee, location: CLLocation(latitude: 48.4952, longitude: 2.3184)),
     PoneyShop(name: "Poney unchained", description: "Do you believe that?", type: .Bar, location: CLLocation(latitude: 48.8876, longitude: 2.3408)),
     PoneyShop(name: "I poney myself tonight", description: "Deadpool wins", type: .NightClub, location: CLLocation(latitude: 48.8739, longitude: 2.3505)),
     PoneyShop(name: "Noooooooooo", description: "Your father is a poney", type: .Bar, location: CLLocation(latitude: 48.8543, longitude: 2.3199)),

@@ -115,6 +115,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="4BN-KB-61Y" id="IIJ-ZB-z9L"/>
                                     <outlet property="nameLabel" destination="dbc-uo-8Yo" id="SgU-Gc-Yot"/>
+                                    <segue destination="9pv-A4-QxB" kind="push" identifier="ShowMap" id="XLo-FP-1JP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -229,6 +230,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.87843137250000003" green="0.1764705882" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -248,4 +252,7 @@
         <image name="heart" width="128" height="128"/>
         <image name="rhino" width="111" height="128"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XLo-FP-1JP"/>
+    </inferredMetricsTieBreakers>
 </document>

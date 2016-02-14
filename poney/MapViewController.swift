@@ -48,11 +48,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
   @IBOutlet weak var segmentedControl: UISegmentedControl!
 
   var initialLocation = CLLocation(latitude: coordinates42.latitude, longitude: coordinates42.longitude)
-  let initialMapType: MKMapType = .Satellite
+  var initialMapType: MKMapType = .Satellite
 
   let mapTypes: [MKMapType] = [.Standard, .Satellite, .Hybrid]
 
-  let pins: [Pin] = [Pin]()
+  var pins: [Pin] = [Pin]()
 
   @IBAction func onSegmentedControlChanged(sender: UISegmentedControl) {
     mapView.mapType = mapTypes[sender.selectedSegmentIndex]
@@ -83,17 +83,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     centerMapOnLocation(initialLocation)
 
     // Add 42 Pin
-    let pin42 = Pin(type: .Bar, title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)
-    self.mapView.addAnnotation(pin42)
+    pins += [Pin(type: .Bar, title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)]
 
     // Init poney shops annotations
     let tabBarController = self.tabBarController as! PoneyTabBarController
     let poneyShops = tabBarController.poneyShops
     for shop in poneyShops {
-      let pin = Pin(type: shop.type, title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)
-      self.mapView.addAnnotation(pin)
+      pins += [Pin(type: shop.type, title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)]
     }
 
+    self.mapView.addAnnotations(pins)
+
+    // display annotation
+    if let firstPin: Pin = pins[0] {
+      self.mapView.selectAnnotation(firstPin, animated: true)
+    }
+
+    // +
     let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
 
     longPressRecogniser.minimumPressDuration = 1.0

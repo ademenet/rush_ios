@@ -57,17 +57,30 @@ class PoneyListViewController: UITableViewController {
     return cell
   }
 
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-    let mapViewController = self.tabBarController?.viewControllers![mapViewControllerIndex] as! MapViewController
-
-    // prepare initialLocation for map view
-    let location: CLLocation = sections[indexPath.section][indexPath.row].location
-    mapViewController.centerMapOnLocation(location)
-
-    // switch to MapView tab
-    self.tabBarController?.selectedIndex = mapViewControllerIndex
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowMap" {
+      let destinationVC = segue.destinationViewController as! MapViewController
+      if let indexPath = tableView.indexPathForSelectedRow {
+        let shop = sections[indexPath.section][indexPath.row]
+        destinationVC.initialLocation = shop.location
+        destinationVC.initialMapType = .Standard
+        destinationVC.pins = [Pin(type: shop.type, title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)]
+        destinationVC.navigationItem.title = shop.name
+      }
+    }
   }
-  
+
+//  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//
+//    let mapViewController = self.tabBarController?.viewControllers![mapViewControllerIndex] as! MapViewController
+//
+//    // prepare initialLocation for map view
+//    let location: CLLocation = sections[indexPath.section][indexPath.row].location
+//    mapViewController.centerMapOnLocation(location)
+//
+//    // switch to MapView tab
+//    self.tabBarController?.selectedIndex = mapViewControllerIndex
+//  }
+
 }
