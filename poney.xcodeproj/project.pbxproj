@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9131B4D91C6FACB000E8BB3C /* PoneyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */; };
+		914384D71C70CD2C003295B5 /* RainbowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914384D61C70CD2C003295B5 /* RainbowViewController.swift */; };
+		914384D91C70E099003295B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914384D81C70E099003295B5 /* Extensions.swift */; };
 		91E8E69C1C6FB783007D065A /* PoneyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */; };
 		B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54201091C6F7B890006171D /* PoneyCell.swift */; };
 		B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyDataModel.swift; sourceTree = "<group>"; };
+		914384D61C70CD2C003295B5 /* RainbowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainbowViewController.swift; sourceTree = "<group>"; };
+		914384D81C70E099003295B5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyTabBarController.swift; sourceTree = "<group>"; };
 		B54201091C6F7B890006171D /* PoneyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoneyCell.swift; sourceTree = "<group>"; };
 		B55CA0E61C6F3A7700F976DB /* poney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poney.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,8 @@
 				B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */,
 				9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */,
 				91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */,
+				914384D61C70CD2C003295B5 /* RainbowViewController.swift */,
+				914384D81C70E099003295B5 /* Extensions.swift */,
 			);
 			path = poney;
 			sourceTree = "<group>";
@@ -254,8 +260,10 @@
 				B55CA0EA1C6F3A7800F976DB /* AppDelegate.swift in Sources */,
 				91E8E69C1C6FB783007D065A /* PoneyTabBarController.swift in Sources */,
 				B566B85A1C6F6E9C008C80E4 /* PoneyListViewController.swift in Sources */,
+				914384D91C70E099003295B5 /* Extensions.swift in Sources */,
 				9131B4D91C6FACB000E8BB3C /* PoneyDataModel.swift in Sources */,
 				B5EF38461C6F855E00A6CEB6 /* MapViewController.swift in Sources */,
+				914384D71C70CD2C003295B5 /* RainbowViewController.swift in Sources */,
 				B542010A1C6F7B890006171D /* PoneyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

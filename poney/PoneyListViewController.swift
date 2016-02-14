@@ -21,6 +21,7 @@ class PoneyListViewController: UITableViewController {
     // init poneyShops from tab bar data
     let tabBarController = self.tabBarController as! PoneyTabBarController
     poneyShops = tabBarController.poneyShops
+    //    rainbow()
   }
 
   // Table View Protocol
@@ -53,5 +54,5 @@ class PoneyListViewController: UITableViewController {
     // switch to MapView tab
     self.tabBarController?.selectedIndex = mapViewControllerIndex
   }
-
+  
 }
