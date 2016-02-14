@@ -36,8 +36,6 @@ class RainbowViewController: UIViewController {
 
   var cancelDispatch = false
 
-  let pinkColor = UIColor(hexString: "#EEA6C8")
-
   func startRainbow(index index: Int) {
     let colors = [
       UIColor.redColor(),
