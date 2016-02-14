@@ -53,6 +53,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
   let mapTypes: [MKMapType] = [.Standard, .Satellite, .Hybrid]
 
   var pins: [Pin] = [Pin]()
+  var displayAllPins = true
 
   @IBAction func onSegmentedControlChanged(sender: UISegmentedControl) {
     mapView.mapType = mapTypes[sender.selectedSegmentIndex]
@@ -82,14 +83,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // Initialise map position
     centerMapOnLocation(initialLocation)
 
-    // Add 42 Pin
-    pins += [Pin(type: .Bar, title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)]
+    if displayAllPins {
+      // Add 42 Pin
+      pins += [Pin(type: .Bar, title: "42 School", subtitle: "96 Boulevard Bessières, 75017 Paris, France", coordinate: coordinates42)]
 
-    // Init poney shops annotations
-    let tabBarController = self.tabBarController as! PoneyTabBarController
-    let poneyShops = tabBarController.poneyShops
-    for shop in poneyShops {
-      pins += [Pin(type: shop.type, title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)]
+      // Init poney shops annotations
+      let tabBarController = self.tabBarController as! PoneyTabBarController
+      let poneyShops = tabBarController.poneyShops
+      for shop in poneyShops {
+        pins += [Pin(type: shop.type, title: shop.name, subtitle: shop.description, coordinate: shop.location.coordinate)]
+      }
     }
 
     self.mapView.addAnnotations(pins)
@@ -111,7 +114,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     let touchPoint = getstureRecognizer.locationInView(self.mapView)
     let touchMapCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
-    print(touchMapCoordinate)
     let annotation = MKPointAnnotation()
     annotation.coordinate = touchMapCoordinate
 
