@@ -12,10 +12,10 @@ import MapKit
 struct PoneyShop {
   var name: String
   var description: String
-  var type: String
+  var type: PoneyShopType
   var location: CLLocation
 
-  init(name: String, description: String, type: String, location: CLLocation) {
+  init(name: String, description: String, type: PoneyShopType, location: CLLocation) {
     self.name = name
     self.description = description
     self.type = type

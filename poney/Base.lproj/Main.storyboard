@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.93333333330000001" green="0.65098039220000004" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PoneyCellIdentifier" rowHeight="73" id="DhB-lG-1Rh" customClass="PoneyCell" customModule="poney" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="73"/>
@@ -91,13 +91,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-uo-8Yo">
                                             <rect key="frame" x="8" y="8" width="50" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.87843137250000003" green="0.1764705882" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BN-KB-61Y">
                                             <rect key="frame" x="8" y="40" width="77" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.87843137250000003" green="0.1764705882" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -108,7 +108,7 @@
                                         <constraint firstAttribute="topMargin" secondItem="dbc-uo-8Yo" secondAttribute="top" id="sr8-1B-XlQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.65098039220000004" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="4BN-KB-61Y" id="IIJ-ZB-z9L"/>
                                     <outlet property="nameLabel" destination="dbc-uo-8Yo" id="SgU-Gc-Yot"/>
@@ -126,7 +126,7 @@
             </objects>
             <point key="canvasLocation" x="808" y="323"/>
         </scene>
-        <!--Rainbow-->
+        <!--Rainbow Mode-->
         <scene sceneID="Nr6-Tg-d3b">
             <objects>
                 <viewController id="HTf-if-sg4" customClass="RainbowViewController" customModule="poney" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="96" y="334" width="128" height="128"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="rhino" translatesAutoresizingMaskIntoConstraints="NO" id="bII-jh-Mtm">
-                                <rect key="frame" x="104" y="65" width="111" height="128"/>
+                                <rect key="frame" x="105" y="109" width="111" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -161,7 +161,7 @@
                             <constraint firstItem="mMY-zE-CUB" firstAttribute="centerX" secondItem="Zav-Vv-AnR" secondAttribute="centerX" id="sXb-ao-L5R"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Rainbow" image="Rainbow-icon" selectedImage="Rainbow-icon" id="AIr-LY-OxD"/>
+                    <navigationItem key="navigationItem" title="Rainbow Mode" id="iSD-7T-fK4"/>
                     <connections>
                         <outlet property="heartImage" destination="KhI-Oj-KeE" id="tER-O5-1hD"/>
                         <outlet property="rhinoImage" destination="bII-jh-Mtm" id="5eh-ad-IQ1"/>
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on5-jf-J7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="963"/>
+            <point key="canvasLocation" x="808" y="963"/>
         </scene>
         <!--Poney Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -186,7 +186,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="vnC-YZ-P5O"/>
                         <segue destination="h8d-KX-YDD" kind="relationship" relationship="viewControllers" id="Cgk-YD-e6Y"/>
-                        <segue destination="HTf-if-sg4" kind="relationship" relationship="viewControllers" id="6QY-Fe-8Dd"/>
+                        <segue destination="l6N-GI-U8k" kind="relationship" relationship="viewControllers" id="6QY-Fe-8Dd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -215,6 +215,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpS-45-Fny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="323"/>
+        </scene>
+        <!--Rainbow-->
+        <scene sceneID="vQl-uF-hxP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l6N-GI-U8k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Rainbow" image="Rainbow-icon" selectedImage="Rainbow-icon" id="AIr-LY-OxD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VV-am-atv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.87843137250000003" green="0.1764705882" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HTf-if-sg4" kind="relationship" relationship="rootViewController" id="KLm-VJ-R9F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqc-Hy-sVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="963"/>
         </scene>
     </scenes>
     <resources>
