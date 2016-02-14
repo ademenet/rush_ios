@@ -11,6 +11,7 @@ import UIKit
 class RainbowViewController: UIViewController {
 
   @IBOutlet weak var rhinoImage: UIImageView!
+  @IBOutlet weak var heartImage: UIImageView!
 
   @IBAction func rainbowSwitch(sender: UISwitch) {
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -19,15 +20,18 @@ class RainbowViewController: UIViewController {
     if sender.on {
       startRainbow(index: 0)
       rhinoImage.hidden = false
+      heartImage.hidden = false
     }
     else {
       stopRainbow()
       rhinoImage.hidden = true
+      heartImage.hidden = true
     }
   }
 
   override func viewDidLoad() {
     rhinoImage.hidden = true
+    heartImage.hidden = true
   }
 
   var cancelDispatch = false
@@ -65,7 +69,7 @@ class RainbowViewController: UIViewController {
 
   func stopRainbow() {
     cancelDispatch = true
-    self.view.backgroundColor = pinkColor
+    self.view.backgroundColor = UIColor.whiteColor()
   }
 
 }
