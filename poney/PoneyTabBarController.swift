@@ -9,21 +9,13 @@
 import UIKit
 import MapKit
 
-enum PoneyShopType {
-  case NightClub
-  case Bar
-  case Coffee
-  case Park
-  case Shop
-}
-
 class PoneyTabBarController: UITabBarController {
 
   // Holds all the data
   var poneyShops: [PoneyShop] = [
     PoneyShop(name: "Poneysher", description: "Hardcore & Gothic poneys", type: .Shop, location: CLLocation(latitude: 48.8965, longitude: 2.318)),
     PoneyShop(name: "Po Po Adventure", description: "Come play with sweet poneys!", type: .Park, location: CLLocation(latitude: 49.89671, longitude: 2.81)),
-    PoneyShop(name: "Rainbow Poney Club", description: "Come, it's so fun", type: .NightClub, location: CLLocation(latitude: -8.82732, longitude: 12.34334431)),
+    PoneyShop(name: "Rainbow Poney Club", description: "Come, it's so fun", type: .NightClub, location: CLLocation(latitude: 8.82732, longitude: 12.34334431)),
     PoneyShop(name: "Hell of a Poney", description: "Dare to touch?", type: .NightClub, location: CLLocation(latitude: 56.637631, longitude: 8.9838)),
     PoneyShop(name: "Unicorn strip bar", description: "Come baby", type: .Bar, location: CLLocation(latitude: 39.89661, longitude: 2.71)),
     PoneyShop(name: "Ooops you touch my tralala", description: "Sweet Jesus!", type: .Coffee, location: CLLocation(latitude: 48.965, longitude: 2.328)),

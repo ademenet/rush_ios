@@ -83,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		914384DA1C711110003295B5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */,
+				B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */,
+				B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */,
+				914384D61C70CD2C003295B5 /* RainbowViewController.swift */,
+				B54201091C6F7B890006171D /* PoneyCell.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		914384DB1C71111D003295B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		914384DC1C711140003295B5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				914384D81C70E099003295B5 /* Extensions.swift */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
 		B55CA0DD1C6F3A7700F976DB = {
 			isa = PBXGroup;
 			children = (
@@ -105,18 +133,14 @@
 		B55CA0E81C6F3A7700F976DB /* poney */ = {
 			isa = PBXGroup;
 			children = (
+				914384DC1C711140003295B5 /* Modules */,
+				914384DB1C71111D003295B5 /* Models */,
+				914384DA1C711110003295B5 /* Controllers */,
 				B55CA0E91C6F3A7800F976DB /* AppDelegate.swift */,
 				B55CA0EF1C6F3A7800F976DB /* Main.storyboard */,
-				B55CA0F21C6F3A7800F976DB /* Assets.xcassets */,
 				B55CA0F41C6F3A7800F976DB /* LaunchScreen.storyboard */,
+				B55CA0F21C6F3A7800F976DB /* Assets.xcassets */,
 				B55CA0F71C6F3A7800F976DB /* Info.plist */,
-				B566B8591C6F6E9C008C80E4 /* PoneyListViewController.swift */,
-				B54201091C6F7B890006171D /* PoneyCell.swift */,
-				B5EF38451C6F855E00A6CEB6 /* MapViewController.swift */,
-				9131B4D81C6FACB000E8BB3C /* PoneyDataModel.swift */,
-				91E8E69B1C6FB783007D065A /* PoneyTabBarController.swift */,
-				914384D61C70CD2C003295B5 /* RainbowViewController.swift */,
-				914384D81C70E099003295B5 /* Extensions.swift */,
 			);
 			path = poney;
 			sourceTree = "<group>";

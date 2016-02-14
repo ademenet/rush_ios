@@ -13,32 +13,47 @@ let mapViewControllerIndex = 0
 
 class PoneyListViewController: UITableViewController {
 
-  var poneyShops = [PoneyShop]()
+  var sections = [[PoneyShop]](count: PoneyShopType.Count.hashValue, repeatedValue: [PoneyShop]())
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // init poneyShops from tab bar data
     let tabBarController = self.tabBarController as! PoneyTabBarController
-    poneyShops = tabBarController.poneyShops
-    //    rainbow()
+
+    let poneyShops = tabBarController.poneyShops
+    for shop in poneyShops {
+      sections[shop.type.hashValue] += [shop]
+    }
   }
 
   // Table View Protocol
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+    return sections.count
+  }
+
+  let sectionsTitles = [
+    "Night Clubs",
+    "Bars",
+    "Coffees",
+    "Parks",
+    "Shops",
+  ]
+
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return sectionsTitles[section]
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return poneyShops.count
+    return sections[section].count
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cellIdentifier = "PoneyCellIdentifier"
     let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! PoneyCell
-    cell.nameLabel.text = poneyShops[indexPath.row].name
-    cell.descriptionLabel.text = poneyShops[indexPath.row].description
+    cell.nameLabel.text = sections[indexPath.section][indexPath.row].name
+    cell.descriptionLabel.text = sections[indexPath.section][indexPath.row].description
     return cell
   }
 
@@ -48,7 +63,7 @@ class PoneyListViewController: UITableViewController {
     let mapViewController = self.tabBarController?.viewControllers![mapViewControllerIndex] as! MapViewController
 
     // prepare initialLocation for map view
-    let location: CLLocation = poneyShops[indexPath.row].location
+    let location: CLLocation = sections[indexPath.section][indexPath.row].location
     mapViewController.centerMapOnLocation(location)
 
     // switch to MapView tab

@@ -9,6 +9,16 @@
 import Foundation
 import MapKit
 
+enum PoneyShopType {
+  case NightClub
+  case Bar
+  case Coffee
+  case Park
+  case Shop
+
+  case Count
+}
+
 struct PoneyShop {
   var name: String
   var description: String
